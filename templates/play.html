@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style2.css' %}">
+</head>
+<body>
+<div class="mainquiz">
+<form class="quiz_form"  id = "qzform" action="showResult/" method="POST">
+{% csrf_token %}
+<div class="question">
+        <div class="question_statement">
+            <h1>To Start the Quiz , press the Start button below</h1>
+        </div>
+</form>
+</div>
+<div class="nxt">
+<button class="next" onclick="load_nxq()">Start</button>
+<input type ="submit" form="qzform" class='sbtn'>
+</div>
+{{ questions|json_script:"question-data" }}
+{{ options|json_script:"options"}}
+<script>
+    var form = document.getElementsByClassName('quiz_form')[0];
+    var QuestionList = JSON.parse(document.getElementById('question-data').textContent);
+    var options = JSON.parse(document.getElementById('options').textContent);
+    var curr =-1;
+    function load_nxq(){
+        curr+=1
+        document.getElementsByClassName('next')[0].innerText = 'Next'
+        var inner = `
+                <div class="question_statement">
+                        <h1>${QuestionList[curr]}</h1>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="option${curr}" value="${options[curr][0]}"><span>&nbsp;&nbsp ${options[curr][0]}</span>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="option${curr}" value="${options[curr][1]}"><span>&nbsp;&nbsp ${options[curr][1]}</span>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="option${curr}" value="${options[curr][2]}"><span>&nbsp;&nbsp ${options[curr][2]}</span>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="option${curr}" value="${options[curr][3]}"><span>&nbsp;&nbsp ${options[curr][3]}</span>
+                    </div>
+                </div>`
+        var ques = document.createElement('div');
+        ques.className = 'question';
+        ques.innerHTML = inner;
+        form.appendChild(ques);
+        document.getElementsByClassName('question')[curr].style.display ='none'
+        if(curr == 19){
+                document.getElementsByClassName('sbtn')[0].style.display = 'block'
+                document.getElementsByClassName('next')[0].disabled = true
+                document.getElementsByClassName('next')[0].style.display = 'none'
+        }
+    }
+</script>
+</body>
+</html>

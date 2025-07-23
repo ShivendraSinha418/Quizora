@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-family: monospace;
+}
+body{
+    background-image: linear-gradient(
+        to right,
+        black,
+        rgb(66, 59, 59),
+        rgb(17, 119, 102),
+        rgb(18, 155, 48)
+    );
+}
+.head{
+    text-align: center;
+    width: 100vw;
+    height: 10vh;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    color: white;
+    font-size: 2rem;
+    padding-top: 1%;
+
+}
+.middle{
+    width: 100vw;
+    height: 40vh;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    /* border: 2px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1%;
+}
+.confirm{
+    width: 100vw;
+    height: auto;
+    /* margin-top: 1%; */
+    font-size: 0.7rem;
+    color: white;
+    text-align: center;
+    /* border: 2px solid white; */
+    position: absolute;
+    bottom: 0;
+}
+.det{
+    width: 70%;
+    height: 30vh;
+    font-size: 2rem;
+    color: white;
+    font-family: monospace;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin: 2px;
+}
+li{
+    margin: 1%;
+}
+#ins{
+    border: 2px solid white;
+    width: 100vw;
+    height: 40vh;
+    overflow-y: scroll;
+    color: white;
+    font-size: 1.2rem;
+}
+.agree{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.proc{
+    background-color: aquamarine;
+    color: rgb(2, 3, 3);
+    width: 8vw;
+    height: 4vh;
+    margin: 1px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.rnd{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-image: linear-gradient(
+        to top left,
+        gray,
+        white
+    );
+    color: black;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 2%;
+    font-size: 1.2rem;
+}
+.detx{
+    margin-left: 3%;
+    font-size: 2rem;
+}
+.conftxt{
+    font-size: 1rem;
+    margin: 2px;
+}
+@media(width<920px){
+
+    #ins{
+        margin-top: 20%;
+        height: 20vh;
+        font-size: 0.8rem;
+    }
+    .confirm{
+    height: 15%;
+    }
+    .rnd{
+        width: 50px;
+        height: 50px;
+    }
+    .detx{
+        font-size: 1.2rem;
+        margin-top: 4%;
+    }
+    .proc{
+        width: 20%;
+        font-size: 0.7rem;
+    }
+    .head{
+        height: 7vh;
+        padding-top: 3%;
+    }
+}

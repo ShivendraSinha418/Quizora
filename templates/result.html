@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="">
+        <title>Result</title>
+        <link rel="stylesheet" href="{% static '/style3.css' %}">
+    </head>
+    <body>
+    <h1 class ='sc'>Your Score is :</h1>
+    <div class ="score"></div>
+    <div class ="resultCont">
+    </div>
+    {{selectedopt|json_script:"selectedopt"}}
+    {{correctopt |json_script:"correctopt"}}
+    {{ques |json_script:"question-data"}}
+    <script>
+    var selectedans = JSON.parse(document.getElementById('selectedopt').textContent);
+    var correctopt = JSON.parse(document.getElementById('correctopt').textContent);
+    var ques_list = JSON.parse(document.getElementById('question-data').textContent);
+    for(var i=0;i<20;i++){
+    var inner = `
+            <h3 class='quest'>${ques_list[i]}</h3>
+            <h3 class ='correct'>Correct Answer: ${correctopt[i][4]}</h3><br>
+            <h3 class = 'chosen' >Your Answer: ${selectedans[i]}</h3>
+        `
+    var innCont = document.createElement('div')
+    innCont.className = 'innCont'
+    innCont.innerHTML = inner
+    document.getElementsByClassName('resultCont')[0].appendChild(innCont)
+    }
+    var score =0
+    for(var i=0;i<20;i++){
+        var correct = document.getElementsByClassName('correct')[i]
+        var chosen = document.getElementsByClassName('chosen')[i]
+        if(correct.innerText.replace('Correct Answer:') === chosen.innerText.replace('Your Answer:')){
+            chosen.style.background ='green'
+            score+=1;
+        }
+        else
+            chosen.style.background = 'red'
+    }
+    score = score/20 * 100
+    document.getElementsByClassName('score')[0].innerText = score + '%'
+    </script>
+    </body>
+</html>

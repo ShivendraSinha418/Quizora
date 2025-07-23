@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{% static 'style1.css' %}">
+</head>
+<body>
+    <div class="head"></div>
+    <div class="middle">
+        <div class="det">
+            <div class="rnd">1</div>
+            <p class="detx">Ques: 20</p>
+        </div>
+        <div class="det">
+            <div class="rnd">2</div>
+            <p class="detx"> Duration: 25min</p>
+        </div>
+        <div class="det">
+            <div class="rnd">3</div>
+            <p class="detx">Level: Easy-Moderate</p>
+        </div>
+    </div>
+    <div id="ins">
+        <ol>
+            <li>Instructions:-</li>
+            <li>1.Ensure your device is fully charged and connected to a reliable internet source before starting the online test.</li>
+            <li>2.Read all the test guidelines carefully to understand question patterns, time limits, and marking schemes before attempting anything.</li>
+            <li>3.Avoid opening other browser tabs or applications, as it may lead to test disqualification due to suspicious behavior detection.</li>
+            <li>4.Use the “Save” button if available to store your answers and avoid losing progress due to unexpected technical issues.</li>
+            <li>5.Review all your answers before clicking the “Submit” button, ensuring accuracy and completeness for the best possible score.</li>
+            <li>6.Ensure your device is fully charged and connected to a reliable internet source before starting the online test.</li>
+            <li>7.Read all the test guidelines carefully to understand question patterns, time limits, and marking schemes before attempting anything.</li> 
+        </ol>
+    </div>
+    <div class="confirm">
+        <p class="conftxt">Disclaimer: This is a project website created for educational purposes only. It is not intended for actual preparation. Please use it responsibly and for fun!</p>
+        <button class="proc" onclick="proceed()">Attempt Quiz</button>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const received = params.get("data");
+        var headtxt =document.getElementsByClassName('head')[0].innerText = received +" Quiz";
+        function proceed(){
+            const proceedtxt = document.getElementsByClassName('head')[0].innerText;
+            const proencode = encodeURIComponent(proceedtxt)
+            window.location.href = `play/?data=${proencode}`
+        }
+    </script>
+</body>
+</html>

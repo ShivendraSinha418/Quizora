@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizora</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+<div class="sidebar">
+    <div class="innm">
+    <div class="sdmenu">Login</div>
+    <div class="sdmenu">Sign up</div>
+    <div class="sdmenu">Guest account</div>
+    <div class="sdmenu">Refer & earn</div>
+    <div class="sdmenu">Contact us</div>
+    <div class="sdmenu">Rate us</div>
+</div>
+</div>
+<div class="head">
+    <span class="hid" onclick="show()">☰</span>
+    <span class="menu">Login</span>
+    <span class="menu">Sign up</span>
+    <span class="menu">Contact us</span>
+    <input placeholder="🔍︎ Search here" type="text" class="searchbar">
+</div>
+<div class="logo">
+    <pre class="logotxt">Quizora
+        
+    </pre>
+    <p class="ldsc">One platform for all your MCQ preparations</p>
+</div>
+<div class="middle">
+    <h2>COMPUTER SCIENCE & IT</h2>
+    <div class="subcont">
+    <div class="sub" id="cs1" onclick="load(this.innerText)">Computer Fundamentals</div>
+    <div class="sub" id="cs2" onclick="load(this.innerText)">Computer Networks</div>
+    <div class="sub" id="cs3" onclick="load(this.innerText)">Operating System</div>
+    <div class="sub" id="cs4" onclick="load(this.innerText)">Programming languages</div>
+    </div>
+    <h2>GENERAL KNOWLEDGE & CURRENT AFFAIRS</h2>
+    <div class="subcont">
+    <div class="sub" id="gk1" onclick="load(this.innerText)">Politics</div>
+    <div class="sub" id="gk2" onclick="load(this.innerText)">Sports</div>
+    <div class="sub" id="gk3" onclick="load(this.innerText)">Finance</div>
+    <div class="sub" id="gk4" onclick="load(this.innerText)">International Affairs</div>
+    </div>
+    <h2>SCIENCE AND TECHNOLOGY</h2>
+    <div class="subcont">
+    <div class="sub" id="sc1" onclick="load(this.innerText)">Physics</div>
+    <div class="sub" id="sc2" onclick="load(this.innerText)">Chemistry</div>
+    <div class="sub" id="sc3" onclick="load(this.innerText)">Biology</div>
+    <div class="sub" id="sc4" onclick="load(this.innerText)">Mathematics</div>
+    </div>
+</div>
+<div class="foot"></div>
+<script>
+    function load(str){
+    const encoded= encodeURIComponent(str)
+    window.location.href = `quiz/?data=${encoded}`
+}
+function show(){
+    if(document.getElementsByClassName('sidebar')[0].style.display === 'none')
+    document.getElementsByClassName('sidebar')[0].style.display='block'
+    else
+    document.getElementsByClassName('sidebar')[0].style.display='none'
+}
+var logo = document.getElementsByClassName('ldsc')[0]
+    setTimeout(() => {
+    logo.style.display='block'
+  }, 2000);
+</script>
+</body>
+</html>
