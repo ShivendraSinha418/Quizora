@@ -39,7 +39,7 @@ It is a beginner-friendly project aimed at learning full-stack web development u
 <p align="center">
   <img src="https://github.com/ShivendraSinha418/Quizora/blob/main/ss1.png" alt="Home Page" width="80%">
   <br><br>
-  <img src="assets/interface2.png" alt="Quiz Page" width="80%">
+  <img src="https://github.com/ShivendraSinha418/Quizora/blob/main/ss2.png" alt="Quiz Page" width="80%">
 </p>
 
 ---
