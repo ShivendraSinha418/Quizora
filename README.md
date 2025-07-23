@@ -37,7 +37,7 @@ It is a beginner-friendly project aimed at learning full-stack web development u
 > Replace the image paths with your actual screenshots.
 
 <p align="center">
-  <img src="assets/interface1.png" alt="Home Page" width="80%">
+  <img src="https://github.com/ShivendraSinha418/Quizora/blob/main/ss1.png" alt="Home Page" width="80%">
   <br><br>
   <img src="assets/interface2.png" alt="Quiz Page" width="80%">
 </p>
