@@ -1,6 +1,6 @@
 # 🧠 Quizora - Online Quizzing Platform
 
-![Quizora Banner](assets/banner.png)
+![Quizora Banner](https://github.com/ShivendraSinha418/Quizora/blob/main/quiz.jpg)
 
 ## 📌 Overview
 
