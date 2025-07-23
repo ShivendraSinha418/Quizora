@@ -56,10 +56,28 @@ It is a beginner-friendly project aimed at learning full-stack web development u
 
 ## 📁 Folder Structure
 
-```bash
+bash
 Quizora/
 ├── quiz/                 # Django app
 │   ├── templates/        # HTML Templates
 │   └── static/           # CSS, JS, images
 ├── Quizora/              # Project config
 ├── manage.py             # Django entry point
+```## Follow these steps to run the project
+# Clone the repository
+git clone https://github.com/yourusername/quizora
+cd quizora
+
+# Create a virtual environment
+python -m venv venv
+
+# Activate it
+venv\Scripts\activate      # Windows
+source venv/bin/activate   # macOS/Linux
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Django development server
+python manage.py runserver
+
