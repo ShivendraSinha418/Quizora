@@ -63,21 +63,28 @@ Quizora/
 │   └── static/           # CSS, JS, images
 ├── Quizora/              # Project config
 ├── manage.py             # Django entry point
-```## Follow these steps to run the project
-# Clone the repository
-git clone https://github.com/yourusername/quizora
-cd quizora
 
-# Create a virtual environment
-python -m venv venv
+---
 
-# Activate it
-venv\Scripts\activate      # Windows
-source venv/bin/activate   # macOS/Linux
+# 
+1. Clone the repository
+   ```bash
+    git clone https://github.com/yourusername/quizora
+    cd quizora
 
-# Install dependencies
-pip install -r requirements.txt
+2. Create a virtual environment
+   ```bash
+    python -m venv venv
 
-# Run the Django development server
-python manage.py runserver
+3. Activate the virtual environment
+     ```bash
+       venv\Scripts\activate
 
+4. Install dependencies
+   ```bash
+    pip install -r requirements.txt
+
+5. Run the Django development server
+   ```bash
+    python manage.py runserver
+---
